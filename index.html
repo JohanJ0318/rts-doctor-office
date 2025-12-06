@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Doctor's Office System | Johan Johnson</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .author-info {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+        
+        .author-info p {
+            font-size: 1em;
+            margin: 5px 0;
+        }
+        
+        main {
+            padding: 40px 30px;
+        }
+        
+        section {
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .project-description {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .project-description p {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .tech-badge {
+            background: #667eea;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #764ba2;
+            transform: scale(1.05);
+        }
+        
+        .btn-secondary {
+            background: #28a745;
+        }
+        
+        .btn-secondary:hover {
+            background: #218838;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+        
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            main {
+                padding: 20px 15px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏥 Real-Time Doctor's Office System</h1>
+            <p>FreeRTOS-Based Medical Queue Management with X-Ray Positioning</p>
+            <div class="author-info">
+                <p><strong>Johan Johnson</strong></p>
+                <p>University of Central Florida | Real-Time Systems Fall 2025</p>
+                <p>📧 jo118525@ucf.edu</p>
+            </div>
+        </header>
+        
+        <main>
+            <!-- Video Demo Section -->
+            <section id="demo">
+                <h2>📹 Video Demo</h2>
+                <div class="video-container">
+                    <!-- REPLACE THIS WITH YOUR YOUTUBE VIDEO EMBED CODE -->
+                    <iframe 
+                        src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" 
+                        title="Real-Time Doctor's Office System Demo" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                    <!-- To get the embed code:
+                         1. Upload your video to YouTube
+                         2. Click "Share" under your video
+                         3. Click "Embed"
+                         4. Copy the iframe code and replace the one above
+                    -->
+                </div>
+                <p style="margin-top: 15px; font-style: italic; color: #666;">
+                    Watch the 90-second demonstration showing patient check-in, queue management, 
+                    and X-ray positioning verification in real-time.
+                </p>
+            </section>
+            
+            <!-- Project Description Section -->
+            <section id="description">
+                <h2>📋 Project Overview</h2>
+                <div class="project-description">
+                    <p>
+                        This embedded system simulates a medical imaging facility's patient flow management 
+                        using an ESP32 microcontroller and FreeRTOS. The system manages patient check-in, 
+                        doctor availability, and X-ray positioning with hard real-time guarantees—ensuring 
+                        that critical safety deadlines are always met.
+                    </p>
+                    <p>
+                        Built for OrlandoHealth MedTech Solutions, this prototype demonstrates how real-time 
+                        operating systems enable predictable, deterministic behavior in life-critical medical 
+                        applications where timing failures could endanger patient safety.
+                    </p>
+                    <p>
+                        <strong>Why Real-Time Matters:</strong> In a medical imaging facility, missing a timing 
+                        deadline could mean scanning a patient in the wrong position (radiation exposure risk), 
+                        losing patients from the queue (HIPAA violations), or creating cascading delays that 
+                        affect dozens of scheduled appointments.
+                    </p>
+                </div>
+            </section>
+            
+            <!-- Key Features Section -->
+            <section id="features">
+                <h2>✨ Key Features</h2>
+                <div class="features">
+                    <div class="feature-card">
+                        <h3>🔘 Patient Check-In</h3>
+                        <p>ISR-driven button press system with hardware debouncing. Binary semaphore 
+                        ensures one patient per press, preventing queue corruption.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>👥 Queue Management</h3>
+                        <p>Manages up to 200 patients with two concurrent doctors using counting 
+                        semaphores. Prevents double-booking and ensures FIFO order.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📏 X-Ray Positioning</h3>
+                        <p>Ultrasonic sensor (HC-SR04) verifies patient distance (100-375cm safe zone). 
+                        Highest priority task ensures life-safety compliance.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>⏱️ Real-Time Guarantees</h3>
+                        <p>FreeRTOS preemptive scheduling with priority-based task execution. 
+                        Logic analyzer proves all hard deadlines met with <5ms jitter.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Technical Details Section -->
+            <section id="technical">
+                <h2>🔧 Technical Implementation</h2>
+                <div class="project-description">
+                    <h3 style="color: #333; margin-bottom: 10px;">Hardware Components</h3>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li>ESP32 DevKit C V4 microcontroller</li>
+                        <li>2× LEDs (office sign, check-in indicator)</li>
+                        <li>HC-SR04 ultrasonic sensor (positioning)</li>
+                        <li>Push button (patient check-in)</li>
+                        <li>Piezo buzzer (patient notification)</li>
+                        <li>Logic analyzer (timing verification)</li>
+                    </ul>
+                    
+                    <h3 style="color: #333; margin-bottom: 10px;">Software Architecture</h3>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>4 FreeRTOS Tasks:</strong> doctor_office_sign, service_button, waiting_room, Xray_Scan</li>
+                        <li><strong>1 ISR:</strong> button_isr_handler (hardware interrupt)</li>
+                        <li><strong>5 Synchronization Primitives:</strong> Binary semaphore, mutex, counting semaphore (×2), queues (×2)</li>
+                        <li><strong>Priority Scheme:</strong> Xray_Scan (4-highest), waiting_room (3), service_button (3), office_sign (1-lowest)</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-stack">
+                    <span class="tech-badge">ESP32</span>
+                    <span class="tech-badge">FreeRTOS</span>
+                    <span class="tech-badge">ESP-IDF</span>
+                    <span class="tech-badge">C</span>
+                    <span class="tech-badge">Wokwi Simulator</span>
+                    <span class="tech-badge">Logic Analyzer</span>
+                </div>
+            </section>
+            
+            <!-- Project Links Section -->
+            <section id="links">
+                <h2>🔗 Project Resources</h2>
+                <div class="links">
+                    <a href="https://wokwi.com/projects/449489603477648385" class="btn" target="_blank">
+                        🖥️ Live Wokwi Simulation
+                    </a>
+                    <a href="https://github.com/YOUR_USERNAME/YOUR_REPO" class="btn btn-secondary" target="_blank">
+                        💻 GitHub Repository
+                    </a>
+                    <!-- Uncomment and add your documentation link if you have one
+                    <a href="documentation.html" class="btn">
+                        📄 Full Documentation
+                    </a>
+                    -->
+                </div>
+                <p style="margin-top: 20px; color: #666;">
+                    <strong>Note:</strong> The Wokwi simulation runs entirely in your browser. 
+                    Click "Start Simulation" and press the red button to check in patients!
+                </p>
+            </section>
+            
+            <!-- Results Section -->
+            <section id="results">
+                <h2>📊 Performance Results</h2>
+                <div class="project-description">
+                    <h3 style="color: #333; margin-bottom: 10px;">Timing Analysis</h3>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li><strong>Xray_Scan Period:</strong> 500ms ±5ms (1% jitter)</li>
+                        <li><strong>Queue Processing:</strong> <50ms latency (90% margin)</li>
+                        <li><strong>ISR Response:</strong> <10µs (button press)</li>
+                        <li><strong>Stress Test:</strong> 10 patients, 2 doctors, no deadline misses</li>
+                    </ul>
+                    
+                    <h3 style="color: #333; margin-bottom: 10px;">Hard Deadline Compliance</h3>
+                    <p>
+                        Logic analyzer verification shows the Xray_Scan task maintains consistent 500ms 
+                        intervals even under maximum load (both doctors busy, full queue). Timestamp logs 
+                        prove deterministic behavior: 326150ms → 326650ms → 327150ms.
+                    </p>
+                </div>
+            </section>
+            
+            <!-- Course Info Section -->
+            <section id="course">
+                <h2>🎓 Course Information</h2>
+                <div class="project-description">
+                    <p><strong>Course:</strong> Real-Time Systems (Fall 2025)</p>
+                    <p><strong>Instructor:</strong> Dr. Mike Borowczak</p>
+                    <p><strong>Institution:</strong> University of Central Florida</p>
+                    <p><strong>Project Type:</strong> Application 6 - Memory-Based Task Communication</p>
+                    <p style="margin-top: 15px;">
+                        This project demonstrates advanced real-time systems concepts including task 
+                        scheduling, inter-task communication, synchronization primitives, and deterministic 
+                        timing analysis—all critical skills for embedded systems engineers working on 
+                        safety-critical applications.
+                    </p>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Johan Johnson | University of Central Florida</p>
+            <p>Built for Real-Time Systems Course | 
+                <a href="https://github.com/YOUR_USERNAME" target="_blank">GitHub Profile</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
