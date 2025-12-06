@@ -228,20 +228,13 @@
             <section id="demo">
                 <h2>📹 Video Demo</h2>
                 <div class="video-container">
-                    <!-- REPLACE THIS WITH YOUR YOUTUBE VIDEO EMBED CODE -->
                     <iframe 
-                        src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" 
+                        src="https://www.youtube.com/embed/wCfJREWKhaA" 
                         title="Real-Time Doctor's Office System Demo" 
                         frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                         allowfullscreen>
                     </iframe>
-                    <!-- To get the embed code:
-                         1. Upload your video to YouTube
-                         2. Click "Share" under your video
-                         3. Click "Embed"
-                         4. Copy the iframe code and replace the one above
-                    -->
                 </div>
                 <p style="margin-top: 15px; font-style: italic; color: #666;">
                     Watch the 90-second demonstration showing patient check-in, queue management, 
@@ -318,7 +311,7 @@
                     <ul style="margin-left: 20px;">
                         <li><strong>4 FreeRTOS Tasks:</strong> doctor_office_sign, service_button, waiting_room, Xray_Scan</li>
                         <li><strong>1 ISR:</strong> button_isr_handler (hardware interrupt)</li>
-                        <li><strong>5 Synchronization Primitives:</strong> Binary semaphore, mutex, counting semaphore (×2), queues (×2)</li>
+                        <li><strong>5 Synchronization Primitives:</strong> Binary semaphore, mutex, counting semaphore, queues (×2)</li>
                         <li><strong>Priority Scheme:</strong> Xray_Scan (4-highest), waiting_room (3), service_button (3), office_sign (1-lowest)</li>
                     </ul>
                 </div>
@@ -340,14 +333,12 @@
                     <a href="https://wokwi.com/projects/449489603477648385" class="btn" target="_blank">
                         🖥️ Live Wokwi Simulation
                     </a>
-                    <a href="https://github.com/YOUR_USERNAME/YOUR_REPO" class="btn btn-secondary" target="_blank">
+                    <a href="https://github.com/JohanJ0318/rts-doctor-office" class="btn btn-secondary" target="_blank">
                         💻 GitHub Repository
                     </a>
-                    <!-- Uncomment and add your documentation link if you have one
-                    <a href="documentation.html" class="btn">
-                        📄 Full Documentation
+                    <a href="https://youtu.be/wCfJREWKhaA" class="btn" target="_blank">
+                        📺 YouTube Demo
                     </a>
-                    -->
                 </div>
                 <p style="margin-top: 20px; color: #666;">
                     <strong>Note:</strong> The Wokwi simulation runs entirely in your browser. 
@@ -397,7 +388,7 @@
         <footer>
             <p>&copy; 2025 Johan Johnson | University of Central Florida</p>
             <p>Built for Real-Time Systems Course | 
-                <a href="https://github.com/YOUR_USERNAME" target="_blank">GitHub Profile</a>
+                <a href="https://github.com/JohanJ0318" target="_blank">GitHub Profile</a>
             </p>
         </footer>
     </div>
