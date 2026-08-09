@@ -3,7 +3,7 @@
 Project showcase page for an **ESP32 + FreeRTOS** embedded system that simulates patient
 flow in a medical imaging facility under hard real-time deadlines.
 
-**[View the live page →](https://johanj0318.github.io/rts-doctor-office/)**
+**[View the live page →](https://johanj0318.github.io/realtime-doctors-office-esp32/)**
 
 UCF — Real-Time Systems, Fall 2025.
 

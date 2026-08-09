@@ -214,19 +214,19 @@
 <body>
     <div class="container">
         <header>
-            <h1>🏥 Real-Time Doctor's Office System</h1>
+            <h1>ðŸ¥ Real-Time Doctor's Office System</h1>
             <p>FreeRTOS-Based Medical Queue Management with X-Ray Positioning</p>
             <div class="author-info">
                 <p><strong>Johan Johnson</strong></p>
                 <p>University of Central Florida | Real-Time Systems Fall 2025</p>
-                <p>📧 jo118525@ucf.edu</p>
+                <p>ðŸ“§ jo118525@ucf.edu</p>
             </div>
         </header>
         
         <main>
             <!-- Video Demo Section -->
             <section id="demo">
-                <h2>📹 Video Demo</h2>
+                <h2>ðŸ“¹ Video Demo</h2>
                 <div class="video-container">
                     <iframe 
                         src="https://www.youtube.com/embed/wCfJREWKhaA" 
@@ -244,12 +244,12 @@
             
             <!-- Project Description Section -->
             <section id="description">
-                <h2>📋 Project Overview</h2>
+                <h2>ðŸ“‹ Project Overview</h2>
                 <div class="project-description">
                     <p>
                         This embedded system simulates a medical imaging facility's patient flow management 
                         using an ESP32 microcontroller and FreeRTOS. The system manages patient check-in, 
-                        doctor availability, and X-ray positioning with hard real-time guarantees—ensuring 
+                        doctor availability, and X-ray positioning with hard real-time guaranteesâ€”ensuring 
                         that critical safety deadlines are always met.
                     </p>
                     <p>
@@ -268,25 +268,25 @@
             
             <!-- Key Features Section -->
             <section id="features">
-                <h2>✨ Key Features</h2>
+                <h2>âœ¨ Key Features</h2>
                 <div class="features">
                     <div class="feature-card">
-                        <h3>🔘 Patient Check-In</h3>
+                        <h3>ðŸ”˜ Patient Check-In</h3>
                         <p>ISR-driven button press system with hardware debouncing. Binary semaphore 
                         ensures one patient per press, preventing queue corruption.</p>
                     </div>
                     <div class="feature-card">
-                        <h3>👥 Queue Management</h3>
+                        <h3>ðŸ‘¥ Queue Management</h3>
                         <p>Manages up to 200 patients with two concurrent doctors using counting 
                         semaphores. Prevents double-booking and ensures FIFO order.</p>
                     </div>
                     <div class="feature-card">
-                        <h3>📏 X-Ray Positioning</h3>
+                        <h3>ðŸ“ X-Ray Positioning</h3>
                         <p>Ultrasonic sensor (HC-SR04) verifies patient distance (100-375cm safe zone). 
                         Highest priority task ensures life-safety compliance.</p>
                     </div>
                     <div class="feature-card">
-                        <h3>⏱️ Real-Time Guarantees</h3>
+                        <h3>â±ï¸ Real-Time Guarantees</h3>
                         <p>FreeRTOS preemptive scheduling with priority-based task execution. 
                         Logic analyzer proves all hard deadlines met with <5ms jitter.</p>
                     </div>
@@ -295,12 +295,12 @@
             
             <!-- Technical Details Section -->
             <section id="technical">
-                <h2>🔧 Technical Implementation</h2>
+                <h2>ðŸ”§ Technical Implementation</h2>
                 <div class="project-description">
                     <h3 style="color: #333; margin-bottom: 10px;">Hardware Components</h3>
                     <ul style="margin-left: 20px; margin-bottom: 20px;">
                         <li>ESP32 DevKit C V4 microcontroller</li>
-                        <li>2× LEDs (office sign, check-in indicator)</li>
+                        <li>2Ã— LEDs (office sign, check-in indicator)</li>
                         <li>HC-SR04 ultrasonic sensor (positioning)</li>
                         <li>Push button (patient check-in)</li>
                         <li>Piezo buzzer (patient notification)</li>
@@ -311,7 +311,7 @@
                     <ul style="margin-left: 20px;">
                         <li><strong>4 FreeRTOS Tasks:</strong> doctor_office_sign, service_button, waiting_room, Xray_Scan</li>
                         <li><strong>1 ISR:</strong> button_isr_handler (hardware interrupt)</li>
-                        <li><strong>5 Synchronization Primitives:</strong> Binary semaphore, mutex, counting semaphore, queues (×2)</li>
+                        <li><strong>5 Synchronization Primitives:</strong> Binary semaphore, mutex, counting semaphore, queues (Ã—2)</li>
                         <li><strong>Priority Scheme:</strong> Xray_Scan (4-highest), waiting_room (3), service_button (3), office_sign (1-lowest)</li>
                     </ul>
                 </div>
@@ -328,16 +328,16 @@
             
             <!-- Project Links Section -->
             <section id="links">
-                <h2>🔗 Project Resources</h2>
+                <h2>ðŸ”— Project Resources</h2>
                 <div class="links">
                     <a href="https://wokwi.com/projects/449489603477648385" class="btn" target="_blank">
-                        🖥️ Live Wokwi Simulation
+                        ðŸ–¥ï¸ Live Wokwi Simulation
                     </a>
-                    <a href="https://github.com/JohanJ0318/rts-doctor-office" class="btn btn-secondary" target="_blank">
-                        💻 GitHub Repository
+                    <a href="https://github.com/JohanJ0318/realtime-doctors-office-esp32" class="btn btn-secondary" target="_blank">
+                        ðŸ’» GitHub Repository
                     </a>
                     <a href="https://youtu.be/wCfJREWKhaA" class="btn" target="_blank">
-                        📺 YouTube Demo
+                        ðŸ“º YouTube Demo
                     </a>
                 </div>
                 <p style="margin-top: 20px; color: #666;">
@@ -348,13 +348,13 @@
             
             <!-- Results Section -->
             <section id="results">
-                <h2>📊 Performance Results</h2>
+                <h2>ðŸ“Š Performance Results</h2>
                 <div class="project-description">
                     <h3 style="color: #333; margin-bottom: 10px;">Timing Analysis</h3>
                     <ul style="margin-left: 20px; margin-bottom: 20px;">
-                        <li><strong>Xray_Scan Period:</strong> 500ms ±5ms (1% jitter)</li>
+                        <li><strong>Xray_Scan Period:</strong> 500ms Â±5ms (1% jitter)</li>
                         <li><strong>Queue Processing:</strong> <50ms latency (90% margin)</li>
-                        <li><strong>ISR Response:</strong> <10µs (button press)</li>
+                        <li><strong>ISR Response:</strong> <10Âµs (button press)</li>
                         <li><strong>Stress Test:</strong> 10 patients, 2 doctors, no deadline misses</li>
                     </ul>
                     
@@ -362,14 +362,14 @@
                     <p>
                         Logic analyzer verification shows the Xray_Scan task maintains consistent 500ms 
                         intervals even under maximum load (both doctors busy, full queue). Timestamp logs 
-                        prove deterministic behavior: 326150ms → 326650ms → 327150ms.
+                        prove deterministic behavior: 326150ms â†’ 326650ms â†’ 327150ms.
                     </p>
                 </div>
             </section>
             
             <!-- Course Info Section -->
             <section id="course">
-                <h2>🎓 Course Information</h2>
+                <h2>ðŸŽ“ Course Information</h2>
                 <div class="project-description">
                     <p><strong>Course:</strong> Real-Time Systems (Fall 2025)</p>
                     <p><strong>Instructor:</strong> Dr. Mike Borowczak</p>
@@ -378,7 +378,7 @@
                     <p style="margin-top: 15px;">
                         This project demonstrates advanced real-time systems concepts including task 
                         scheduling, inter-task communication, synchronization primitives, and deterministic 
-                        timing analysis—all critical skills for embedded systems engineers working on 
+                        timing analysisâ€”all critical skills for embedded systems engineers working on 
                         safety-critical applications.
                     </p>
                 </div>
